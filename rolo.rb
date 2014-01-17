@@ -1,3 +1,4 @@
+
 class Rolodex
 
   def initialize
@@ -5,16 +6,22 @@ class Rolodex
     @id = 0
   end
 
-  def new_contact(name, age, email)
+  def add_new_contact(name, age, email)
 
     @id += 1
     @contacts << Contact.new(@id, name, age, email)
 
   end
 
-  def index
+  def display_all_contacts
     @contacts.each do |contact|
       return contact if contact.id == @id
     end
   end
+
+
+  def exit_program
+    exit
+  end
+
 end
