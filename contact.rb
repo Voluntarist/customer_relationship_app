@@ -6,6 +6,7 @@ class Contact
     @name = name
     @age = age
     @email = email
+    @id = id
   end
 end
 

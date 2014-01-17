@@ -50,8 +50,9 @@ class CRM
 end
 
 
-  a = CRM.new("list")
+  a = CRM.new("app")
   list1 = Rolodex.new
+  list1.exit_program
   puts "***WELCOME TO YOUR CRM MANAGER***".color('#ffffff')
   a.main_menu
 
