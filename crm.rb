@@ -1,8 +1,9 @@
 #CUSTOMER MANAGEMENT APPLICATION!
 # ---------------------------------
+require 'rainbow'
 require_relative 'contact'
 require_relative 'rolo'
-require 'rainbow'
+
 
 class CRM
 
@@ -25,6 +26,11 @@ class CRM
     print_main_menu
     user_selected = gets.to_i
     call_option(user_selected)
+  end
+
+  def exit_program
+    print "now leaving the program see ya later... FOREVER!".color('#ff0000')
+    exit
   end
 
   def call_option(user_selected)
@@ -52,7 +58,6 @@ end
 
   a = CRM.new("app")
   list1 = Rolodex.new
-  list1.exit_program
   puts "***WELCOME TO YOUR CRM MANAGER***".color('#ffffff')
   a.main_menu
 
