@@ -1,5 +1,5 @@
 #CUSTOMER MANAGEMENT APPLICATION!
-# ---------------------------------
+# --------------------------------
 require 'rainbow'
 require_relative 'contact'
 require_relative 'rolo'
@@ -7,8 +7,8 @@ require_relative 'rolo'
 
 class CRM
 
-  def initialize(name_being_passed_in)
-    @name = name_being_passed_in
+  def initialize
+    @rolo = Rolodex.new
   end
 
 
@@ -36,13 +36,17 @@ class CRM
   def call_option(user_selected)
     case
     when user_selected == 1
-      add_new_contact
+      @rolo.add_new_contact
+      puts "\e[H\e[2J"
+      print "contact successfully updated!".color('#ff6699')
+      main_menu
     when user_selected == 2
       modify_existing_contact
     when user_selected == 3
       delete_contact
     when user_selected == 4
-      display_all_contacts
+      @rolo.display_all_contacts
+      main_menu
     when user_selected == 5
       display_an_attribute
     when user_selected == 6
@@ -56,9 +60,10 @@ class CRM
 end
 
 
-  a = CRM.new("app")
-  list1 = Rolodex.new
+
+  #list1 = Rolodex.new
   puts "***WELCOME TO YOUR CRM MANAGER***".color('#ffffff')
+  a = CRM.new
   a.main_menu
 
 
