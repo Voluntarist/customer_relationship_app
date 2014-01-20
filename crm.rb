@@ -41,9 +41,10 @@ class CRM
       print "contact successfully updated!".color('#ff6699')
       main_menu
     when user_selected == 2
-      modify_existing_contact
+      @rolo.modify_contact
     when user_selected == 3
-      delete_contact
+      @rolo.delete_contact
+      main_menu
     when user_selected == 4
       @rolo.display_all_contacts
       main_menu
@@ -53,7 +54,7 @@ class CRM
       exit_program
     else
       puts "\e[H\e[2J"
-      puts "Sorry thats not an option! Lets try that again dummy.".color('#ffffff')
+      puts "Did you see that as a choice?! Lets try that again dummy.".color('#ff3300')
       main_menu
     end
   end
