@@ -62,7 +62,7 @@ end
 
 
 
-  #list1 = Rolodex.new
+
   puts "***WELCOME TO YOUR CRM MANAGER***".color('#ffffff')
   a = CRM.new
   a.main_menu
